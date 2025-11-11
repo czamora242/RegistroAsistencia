@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubFrmCrearUsuario));
             lblRegistroUsuarios = new Label();
             textBox1 = new TextBox();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             comboBox1 = new ComboBox();
             textBox2 = new TextBox();
             lblUsuario = new Label();
@@ -74,12 +72,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(232, 27);
             textBox1.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // comboBox1
             // 
@@ -304,7 +296,6 @@
 
         private Label lblRegistroUsuarios;
         private TextBox textBox1;
-        private ContextMenuStrip contextMenuStrip1;
         private ComboBox comboBox1;
         private TextBox textBox2;
         private Label lblUsuario;
