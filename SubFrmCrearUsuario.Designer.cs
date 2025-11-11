@@ -162,9 +162,9 @@
             label1.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(569, 63);
             label1.Name = "label1";
-            label1.Size = new Size(132, 22);
+            label1.Size = new Size(188, 22);
             label1.TabIndex = 13;
-            label1.Text = "Filtrar Usuarios";
+            label1.Text = "FILTRAR USUARIOS:";
             // 
             // button4
             // 
