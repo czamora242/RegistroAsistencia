@@ -43,9 +43,9 @@
             label5 = new Label();
             label6 = new Label();
             panelRegistro = new Panel();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnEliminar = new Button();
+            btnActualizar = new Button();
+            btnLimpiar = new Button();
             btnGuardar = new Button();
             cbPrograma = new ComboBox();
             label3 = new Label();
@@ -183,7 +183,7 @@
             label5.Size = new Size(113, 39);
             label5.TabIndex = 45;
             label5.Text = "Buscar:";
-            label5.Click += label5_Click_1;
+
             // 
             // label6
             // 
@@ -198,9 +198,9 @@
             // 
             // panelRegistro
             // 
-            panelRegistro.Controls.Add(button3);
-            panelRegistro.Controls.Add(button2);
-            panelRegistro.Controls.Add(button1);
+            panelRegistro.Controls.Add(btnEliminar);
+            panelRegistro.Controls.Add(btnActualizar);
+            panelRegistro.Controls.Add(btnLimpiar);
             panelRegistro.Controls.Add(btnGuardar);
             panelRegistro.Controls.Add(cbPrograma);
             panelRegistro.Controls.Add(label3);
@@ -223,53 +223,56 @@
             panelRegistro.Size = new Size(729, 603);
             panelRegistro.TabIndex = 0;
             // 
-            // button3
+            // btnEliminar
             // 
-            button3.BackColor = Color.FromArgb(9, 15, 70);
-            button3.FlatAppearance.BorderColor = Color.Silver;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.FromArgb(225, 225, 225);
-            button3.Location = new Point(532, 484);
-            button3.Name = "button3";
-            button3.Size = new Size(134, 32);
-            button3.TabIndex = 56;
-            button3.Text = "ELIMINAR";
-            button3.UseVisualStyleBackColor = false;
+            btnEliminar.BackColor = Color.FromArgb(9, 15, 70);
+            btnEliminar.FlatAppearance.BorderColor = Color.Silver;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.ForeColor = Color.FromArgb(225, 225, 225);
+            btnEliminar.Location = new Point(532, 484);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(134, 32);
+            btnEliminar.TabIndex = 56;
+            btnEliminar.Text = "ELIMINAR";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // button2
+            // btnActualizar
             // 
-            button2.BackColor = Color.FromArgb(9, 15, 70);
-            button2.FlatAppearance.BorderColor = Color.Silver;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(225, 225, 225);
-            button2.Location = new Point(380, 484);
-            button2.Name = "button2";
-            button2.Size = new Size(134, 32);
-            button2.TabIndex = 55;
-            button2.Text = "ACTUALIZAR";
-            button2.UseVisualStyleBackColor = false;
+            btnActualizar.BackColor = Color.FromArgb(9, 15, 70);
+            btnActualizar.FlatAppearance.BorderColor = Color.Silver;
+            btnActualizar.FlatAppearance.BorderSize = 0;
+            btnActualizar.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
+            btnActualizar.FlatStyle = FlatStyle.Flat;
+            btnActualizar.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnActualizar.ForeColor = Color.FromArgb(225, 225, 225);
+            btnActualizar.Location = new Point(380, 484);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(134, 32);
+            btnActualizar.TabIndex = 55;
+            btnActualizar.Text = "ACTUALIZAR";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
-            // button1
+            // btnLimpiar
             // 
-            button1.BackColor = Color.FromArgb(9, 15, 70);
-            button1.FlatAppearance.BorderColor = Color.Silver;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(225, 225, 225);
-            button1.Location = new Point(222, 484);
-            button1.Name = "button1";
-            button1.Size = new Size(134, 32);
-            button1.TabIndex = 54;
-            button1.Text = "LIMPIAR";
-            button1.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(9, 15, 70);
+            btnLimpiar.FlatAppearance.BorderColor = Color.Silver;
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.ForeColor = Color.FromArgb(225, 225, 225);
+            btnLimpiar.Location = new Point(222, 484);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(134, 32);
+            btnLimpiar.TabIndex = 54;
+            btnLimpiar.Text = "LIMPIAR";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnGuardar
             // 
@@ -286,6 +289,7 @@
             btnGuardar.TabIndex = 53;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // cbPrograma
             // 
@@ -439,9 +443,9 @@
         private Panel panelContenido;
         private Panel panel1;
         private Panel panelRegistro;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnEliminar;
+        private Button btnActualizar;
+        private Button btnLimpiar;
         private Button btnGuardar;
         private ComboBox cbPrograma;
         private Label label3;
