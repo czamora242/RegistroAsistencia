@@ -29,17 +29,10 @@
         private void InitializeComponent()
         {
             panelContenido = new Panel();
-            panel1 = new Panel();
+            panelBusqueda = new Panel();
             dtgRegistro = new DataGridView();
-            nombre = new DataGridViewTextBoxColumn();
-            apellidos = new DataGridViewTextBoxColumn();
-            dni = new DataGridViewTextBoxColumn();
-            correo = new DataGridViewTextBoxColumn();
-            telefono = new DataGridViewTextBoxColumn();
-            tipo = new DataGridViewTextBoxColumn();
-            programa = new DataGridViewTextBoxColumn();
-            button4 = new Button();
-            textBox1 = new TextBox();
+            btnBuscar = new Button();
+            txtBuscar = new TextBox();
             label5 = new Label();
             label6 = new Label();
             panelRegistro = new Panel();
@@ -63,17 +56,16 @@
             lblNombre = new Label();
             label4 = new Label();
             panelContenido.SuspendLayout();
-            panel1.SuspendLayout();
+            panelBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgRegistro).BeginInit();
             panelRegistro.SuspendLayout();
             SuspendLayout();
             // 
             // panelContenido
             // 
-            panelContenido.AutoScroll = true;
             panelContenido.AutoScrollMinSize = new Size(1200, 0);
             panelContenido.BackColor = Color.FromArgb(225, 225, 225);
-            panelContenido.Controls.Add(panel1);
+            panelContenido.Controls.Add(panelBusqueda);
             panelContenido.Controls.Add(panelRegistro);
             panelContenido.Dock = DockStyle.Fill;
             panelContenido.Location = new Point(0, 0);
@@ -81,104 +73,54 @@
             panelContenido.Name = "panelContenido";
             panelContenido.Size = new Size(1122, 452);
             panelContenido.TabIndex = 0;
+            panelContenido.Resize += panelContenido_Resize;
             // 
-            // panel1
+            // panelBusqueda
             // 
-            panel1.Controls.Add(dtgRegistro);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label6);
-            panel1.Location = new Point(638, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(562, 452);
-            panel1.TabIndex = 1;
+            panelBusqueda.Controls.Add(dtgRegistro);
+            panelBusqueda.Controls.Add(btnBuscar);
+            panelBusqueda.Controls.Add(txtBuscar);
+            panelBusqueda.Controls.Add(label5);
+            panelBusqueda.Controls.Add(label6);
+            panelBusqueda.Location = new Point(729, 0);
+            panelBusqueda.Name = "panelBusqueda";
+            panelBusqueda.Size = new Size(642, 603);
+            panelBusqueda.TabIndex = 1;
             // 
             // dtgRegistro
             // 
+            dtgRegistro.BackgroundColor = Color.FromArgb(65, 92, 149);
             dtgRegistro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgRegistro.Columns.AddRange(new DataGridViewColumn[] { nombre, apellidos, dni, correo, telefono, tipo, programa });
-            dtgRegistro.Location = new Point(32, 116);
-            dtgRegistro.Margin = new Padding(3, 2, 3, 2);
+            dtgRegistro.Location = new Point(37, 154);
             dtgRegistro.Name = "dtgRegistro";
             dtgRegistro.RowHeadersWidth = 51;
             dtgRegistro.Size = new Size(494, 301);
             dtgRegistro.TabIndex = 47;
+            dtgRegistro.CellClick += dtgRegistro_CellClick;
             // 
-            // nombre
+            // btnBuscar
             // 
-            nombre.HeaderText = "Nombres";
-            nombre.MinimumWidth = 6;
-            nombre.Name = "nombre";
-            nombre.Width = 125;
+            btnBuscar.BackColor = Color.FromArgb(9, 15, 70);
+            btnBuscar.FlatAppearance.BorderColor = Color.Silver;
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscar.ForeColor = Color.FromArgb(225, 225, 225);
+            btnBuscar.Location = new Point(479, 93);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(134, 32);
+            btnBuscar.TabIndex = 43;
+            btnBuscar.Text = "BUSCAR";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
-            // apellidos
+            // txtBuscar
             // 
-            apellidos.HeaderText = "Apellidos";
-            apellidos.MinimumWidth = 6;
-            apellidos.Name = "apellidos";
-            apellidos.Width = 125;
-            // 
-            // dni
-            // 
-            dni.HeaderText = "Documento";
-            dni.MinimumWidth = 6;
-            dni.Name = "dni";
-            dni.Width = 125;
-            // 
-            // correo
-            // 
-            correo.HeaderText = "Correo";
-            correo.MinimumWidth = 6;
-            correo.Name = "correo";
-            correo.Width = 125;
-            // 
-            // telefono
-            // 
-            telefono.HeaderText = "Teléfono";
-            telefono.MinimumWidth = 6;
-            telefono.Name = "telefono";
-            telefono.Width = 125;
-            // 
-            // tipo
-            // 
-            tipo.HeaderText = "Tipo";
-            tipo.MinimumWidth = 6;
-            tipo.Name = "tipo";
-            tipo.Width = 125;
-            // 
-            // programa
-            // 
-            programa.HeaderText = "Programa Académico";
-            programa.MinimumWidth = 6;
-            programa.Name = "programa";
-            programa.Width = 125;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(9, 15, 70);
-            button4.FlatAppearance.BorderColor = Color.Silver;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.FromArgb(225, 225, 225);
-            button4.Location = new Point(419, 70);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(117, 24);
-            button4.TabIndex = 43;
-            button4.Text = "BUSCAR";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(93, 72);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(316, 23);
-            textBox1.TabIndex = 44;
+            txtBuscar.Location = new Point(106, 96);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(361, 27);
+            txtBuscar.TabIndex = 44;
             // 
             // label5
             // 
@@ -227,6 +169,7 @@
             panelRegistro.Name = "panelRegistro";
             panelRegistro.Size = new Size(638, 452);
             panelRegistro.TabIndex = 0;
+            panelRegistro.Paint += panelRegistro_Paint;
             // 
             // btnEliminar
             // 
@@ -440,16 +383,18 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1122, 452);
+            BackColor = Color.FromArgb(225, 225, 225);
+            ClientSize = new Size(1282, 603);
             ControlBox = false;
             Controls.Add(panelContenido);
             Margin = new Padding(3, 2, 3, 2);
             Name = "SubFrmPersonas";
             Text = "SubFrmPersonas";
             Load += SubFrmPersonas_Load;
+            Resize += SubFrmPersonas_Resize;
             panelContenido.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelBusqueda.ResumeLayout(false);
+            panelBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtgRegistro).EndInit();
             panelRegistro.ResumeLayout(false);
             panelRegistro.PerformLayout();
@@ -459,7 +404,7 @@
         #endregion
 
         private Panel panelContenido;
-        private Panel panel1;
+        private Panel panelBusqueda;
         private Panel panelRegistro;
         private Button btnEliminar;
         private Button btnActualizar;
@@ -481,15 +426,8 @@
         private Label lblNombre;
         private Label label4;
         private DataGridView dtgRegistro;
-        private DataGridViewTextBoxColumn nombre;
-        private DataGridViewTextBoxColumn apellidos;
-        private DataGridViewTextBoxColumn dni;
-        private DataGridViewTextBoxColumn correo;
-        private DataGridViewTextBoxColumn telefono;
-        private DataGridViewTextBoxColumn tipo;
-        private DataGridViewTextBoxColumn programa;
-        private Button button4;
-        private TextBox textBox1;
+        private Button btnBuscar;
+        private TextBox txtBuscar;
         private Label label5;
         private Label label6;
     }
