@@ -44,14 +44,14 @@
             btnRegistrador = new Button();
             btnConsultor = new Button();
             dgvUsuarios = new DataGridView();
-            pictureBox1 = new PictureBox();
-            label2 = new Label();
-            btnAdministrador = new Button();
             id_usuario = new DataGridViewTextBoxColumn();
             usuario = new DataGridViewTextBoxColumn();
             clave = new DataGridViewTextBoxColumn();
             rol = new DataGridViewTextBoxColumn();
             estado = new DataGridViewTextBoxColumn();
+            pictureBox1 = new PictureBox();
+            label2 = new Label();
+            btnAdministrador = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -204,36 +204,6 @@
             dgvUsuarios.TabIndex = 17;
             dgvUsuarios.CellContentClick += dgvUsuarios_CellContentClick;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox1.Location = new Point(515, 52);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(48, 39);
-            pictureBox1.TabIndex = 18;
-            pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(511, 117);
-            label2.Name = "label2";
-            label2.Size = new Size(34, 20);
-            label2.TabIndex = 19;
-            label2.Text = "Rol:";
-            // 
-            // btnAdministrador
-            // 
-            btnAdministrador.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdministrador.Location = new Point(644, 108);
-            btnAdministrador.Name = "btnAdministrador";
-            btnAdministrador.Size = new Size(118, 29);
-            btnAdministrador.TabIndex = 20;
-            btnAdministrador.Text = "ADMINISTRADOR";
-            btnAdministrador.UseVisualStyleBackColor = true;
-            // 
             // id_usuario
             // 
             id_usuario.DataPropertyName = "id_usuario";
@@ -276,6 +246,36 @@
             estado.Resizable = DataGridViewTriState.True;
             estado.SortMode = DataGridViewColumnSortMode.NotSortable;
             estado.Width = 125;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.Location = new Point(515, 52);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 39);
+            pictureBox1.TabIndex = 18;
+            pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(511, 117);
+            label2.Name = "label2";
+            label2.Size = new Size(34, 20);
+            label2.TabIndex = 19;
+            label2.Text = "Rol:";
+            // 
+            // btnAdministrador
+            // 
+            btnAdministrador.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdministrador.Location = new Point(644, 108);
+            btnAdministrador.Name = "btnAdministrador";
+            btnAdministrador.Size = new Size(118, 29);
+            btnAdministrador.TabIndex = 20;
+            btnAdministrador.Text = "ADMINISTRADOR";
+            btnAdministrador.UseVisualStyleBackColor = true;
             // 
             // SubFrmCrearUsuario
             // 

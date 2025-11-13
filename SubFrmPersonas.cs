@@ -84,6 +84,9 @@ namespace pyRegistroAsistencia
 
             // Ocultar la columna ID si no quieres mostrarla
             dtgRegistro.Columns["id_persona"].Visible = true;
+
+            dtgRegistro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtgRegistro.RowHeadersVisible = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -305,7 +308,6 @@ namespace pyRegistroAsistencia
                     da.SelectCommand.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-
                     dtgRegistro.AutoGenerateColumns = true;
                     dtgRegistro.Columns.Clear();
                     dtgRegistro.DataSource = dt;
@@ -323,6 +325,7 @@ namespace pyRegistroAsistencia
                     // Opcional: centramos ID y ajustamos columnas
                     dtgRegistro.Columns["id_persona"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dtgRegistro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
                 }
 
             }
