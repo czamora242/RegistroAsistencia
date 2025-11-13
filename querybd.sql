@@ -82,7 +82,7 @@ CREATE TABLE UsuarioSistema (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     usuario VARCHAR(50) UNIQUE NOT NULL,
     clave VARCHAR(255) NOT NULL, -- Guardar encriptada (SHA2)
-    rol ENUM('Administrador','Registrador','Consulta') DEFAULT 'Consulta',
+    rol ENUM('Administrador','Registrador','Consultor') DEFAULT 'Consultor',
     estado ENUM('Activo','Inactivo') DEFAULT 'Activo',
     fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -164,5 +164,6 @@ INSERT INTO Asistencia (id_evento, id_persona, estado) VALUES
 -- Usuarios del sistema
 INSERT INTO UsuarioSistema (usuario, clave, rol)
 VALUES
-('admin', SHA2('admin123', 256), 'Administrador'),
-('registro1', SHA2('registro123', 256), 'Registrador');
+('admin', 'admin123', 'Administrador'),
+('registrador', 'registrador123', 'Registrador'),
+('consultor', 'consultor123', 'Consultor');
