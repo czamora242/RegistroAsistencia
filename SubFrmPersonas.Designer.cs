@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panelContenido = new Panel();
-            panel1 = new Panel();
+            panelBusqueda = new Panel();
             dtgRegistro = new DataGridView();
             btnBuscar = new Button();
             txtBuscar = new TextBox();
@@ -56,35 +56,35 @@
             lblNombre = new Label();
             label4 = new Label();
             panelContenido.SuspendLayout();
-            panel1.SuspendLayout();
+            panelBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgRegistro).BeginInit();
             panelRegistro.SuspendLayout();
             SuspendLayout();
             // 
             // panelContenido
             // 
-            panelContenido.AutoScroll = true;
             panelContenido.AutoScrollMinSize = new Size(1200, 0);
             panelContenido.BackColor = Color.FromArgb(225, 225, 225);
-            panelContenido.Controls.Add(panel1);
+            panelContenido.Controls.Add(panelBusqueda);
             panelContenido.Controls.Add(panelRegistro);
             panelContenido.Dock = DockStyle.Fill;
             panelContenido.Location = new Point(0, 0);
             panelContenido.Name = "panelContenido";
             panelContenido.Size = new Size(1282, 603);
             panelContenido.TabIndex = 0;
+            panelContenido.Resize += panelContenido_Resize;
             // 
-            // panel1
+            // panelBusqueda
             // 
-            panel1.Controls.Add(dtgRegistro);
-            panel1.Controls.Add(btnBuscar);
-            panel1.Controls.Add(txtBuscar);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label6);
-            panel1.Location = new Point(729, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(642, 603);
-            panel1.TabIndex = 1;
+            panelBusqueda.Controls.Add(dtgRegistro);
+            panelBusqueda.Controls.Add(btnBuscar);
+            panelBusqueda.Controls.Add(txtBuscar);
+            panelBusqueda.Controls.Add(label5);
+            panelBusqueda.Controls.Add(label6);
+            panelBusqueda.Location = new Point(729, 0);
+            panelBusqueda.Name = "panelBusqueda";
+            panelBusqueda.Size = new Size(642, 603);
+            panelBusqueda.TabIndex = 1;
             // 
             // dtgRegistro
             // 
@@ -167,6 +167,7 @@
             panelRegistro.Name = "panelRegistro";
             panelRegistro.Size = new Size(729, 603);
             panelRegistro.TabIndex = 0;
+            panelRegistro.Paint += panelRegistro_Paint;
             // 
             // btnEliminar
             // 
@@ -368,15 +369,17 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            BackColor = Color.FromArgb(225, 225, 225);
             ClientSize = new Size(1282, 603);
             ControlBox = false;
             Controls.Add(panelContenido);
             Name = "SubFrmPersonas";
             Text = "SubFrmPersonas";
             Load += SubFrmPersonas_Load;
+            Resize += SubFrmPersonas_Resize;
             panelContenido.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelBusqueda.ResumeLayout(false);
+            panelBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtgRegistro).EndInit();
             panelRegistro.ResumeLayout(false);
             panelRegistro.PerformLayout();
@@ -386,7 +389,7 @@
         #endregion
 
         private Panel panelContenido;
-        private Panel panel1;
+        private Panel panelBusqueda;
         private Panel panelRegistro;
         private Button btnEliminar;
         private Button btnActualizar;

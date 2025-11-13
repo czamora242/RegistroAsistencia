@@ -28,6 +28,7 @@ namespace pyRegistroAsistencia
             CargarPersonas();
             CargarTipos();
             CargarProgramas();
+
         }
 
         private void CargarProgramas()
@@ -357,6 +358,21 @@ namespace pyRegistroAsistencia
                 string nombreProg = fila.Cells["programa"].Value.ToString();
                 cbPrograma.Text = nombreProg;
             }
+        }
+
+        private void SubFrmPersonas_Resize(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelContenido_Resize(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelRegistro_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
