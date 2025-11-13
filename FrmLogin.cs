@@ -191,26 +191,6 @@ namespace pyRegistroAsistencia
                     MessageBox.Show("Error al conectar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-        }
-
-        private void btnProbarConexion_Click(object sender, EventArgs e)
-        {
-            //string connectionString = "Server=localhost;Database=AsistenciaUniversitaria;Uid=root;Pwd=60417779;";
-            string connectionString = "Server=localhost;Database=AsistenciaUniversitaria;Uid=root;Pwd=123456;";
-
-            using (MySqlConnection conexion = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    conexion.Open();
-                    MessageBox.Show("✅ Conexión exitosa con la base de datos.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("❌ Error al conectar:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+        }  
     }
 }

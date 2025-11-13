@@ -38,7 +38,6 @@
             linkPassword = new LinkLabel();
             btnCerrar = new PictureBox();
             btnMinimizar = new PictureBox();
-            btnProbarConexion = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
@@ -160,23 +159,12 @@
             btnMinimizar.TabStop = false;
             btnMinimizar.Click += btnMinimizar_Click;
             // 
-            // btnProbarConexion
-            // 
-            btnProbarConexion.Location = new Point(315, 163);
-            btnProbarConexion.Name = "btnProbarConexion";
-            btnProbarConexion.Size = new Size(406, 29);
-            btnProbarConexion.TabIndex = 8;
-            btnProbarConexion.Text = "Probar conexión";
-            btnProbarConexion.UseVisualStyleBackColor = true;
-            btnProbarConexion.Click += btnProbarConexion_Click;
-            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(214, 214, 214);
             ClientSize = new Size(780, 330);
-            Controls.Add(btnProbarConexion);
             Controls.Add(btnMinimizar);
             Controls.Add(btnCerrar);
             Controls.Add(linkPassword);
@@ -212,6 +200,5 @@
         private PictureBox btnCerrar;
         private PictureBox btnMinimizar;
         private PictureBox pictureBox3;
-        private Button btnProbarConexion;
     }
 }
