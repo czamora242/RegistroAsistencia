@@ -28,32 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            picImagenEvento = new PictureBox();
+            lblTituloEvento = new Label();
+            lblCantidadAsistentes = new Label();
+            ((System.ComponentModel.ISupportInitialize)picImagenEvento).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // picImagenEvento
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(354, 105);
-            label1.Name = "label1";
-            label1.Size = new Size(45, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Inicio";
+            picImagenEvento.Dock = DockStyle.Fill;
+            picImagenEvento.Location = new Point(0, 0);
+            picImagenEvento.Name = "picImagenEvento";
+            picImagenEvento.Size = new Size(800, 450);
+            picImagenEvento.TabIndex = 0;
+            picImagenEvento.TabStop = false;
+            // 
+            // lblTituloEvento
+            // 
+            lblTituloEvento.AutoSize = true;
+            lblTituloEvento.Font = new Font("Trebuchet MS", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTituloEvento.ForeColor = Color.Black;
+            lblTituloEvento.Location = new Point(77, 121);
+            lblTituloEvento.Name = "lblTituloEvento";
+            lblTituloEvento.Size = new Size(324, 43);
+            lblTituloEvento.TabIndex = 22;
+            lblTituloEvento.Text = "Nombre del Evento";
+            // 
+            // lblCantidadAsistentes
+            // 
+            lblCantidadAsistentes.AutoSize = true;
+            lblCantidadAsistentes.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold);
+            lblCantidadAsistentes.ForeColor = Color.FromArgb(9, 15, 70);
+            lblCantidadAsistentes.Location = new Point(371, 353);
+            lblCantidadAsistentes.Name = "lblCantidadAsistentes";
+            lblCantidadAsistentes.Size = new Size(21, 23);
+            lblCantidadAsistentes.TabIndex = 23;
+            lblCantidadAsistentes.Text = "0";
             // 
             // SubFrmInicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            Controls.Add(lblCantidadAsistentes);
+            Controls.Add(lblTituloEvento);
+            Controls.Add(picImagenEvento);
             Name = "SubFrmInicio";
             Text = "SubFrmInicio";
+            Load += SubFrmInicio_Load;
+            ((System.ComponentModel.ISupportInitialize)picImagenEvento).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private PictureBox picImagenEvento;
+        private Label lblTituloEvento;
+        private Label lblCantidadAsistentes;
     }
 }
