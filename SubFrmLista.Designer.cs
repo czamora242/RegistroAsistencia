@@ -34,10 +34,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(9, 15, 70);
             label1.Location = new Point(300, 12);
             label1.Name = "label1";
-            label1.Size = new Size(156, 25);
+            label1.Size = new Size(138, 20);
             label1.TabIndex = 0;
             label1.Text = "Lista de Asistencia";
             // 
@@ -52,12 +53,16 @@
             // 
             // btnMostrarTodo
             // 
-            btnMostrarTodo.Location = new Point(520, 50);
+            btnMostrarTodo.BackColor = Color.FromArgb(9, 15, 70);
+            btnMostrarTodo.FlatStyle = FlatStyle.Flat;
+            btnMostrarTodo.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Bold);
+            btnMostrarTodo.ForeColor = Color.FromArgb(225, 225, 225);
+            btnMostrarTodo.Location = new Point(527, 43);
             btnMostrarTodo.Name = "btnMostrarTodo";
-            btnMostrarTodo.Size = new Size(90, 23);
+            btnMostrarTodo.Size = new Size(117, 34);
             btnMostrarTodo.TabIndex = 2;
             btnMostrarTodo.Text = "Mostrar Todo";
-            btnMostrarTodo.UseVisualStyleBackColor = true;
+            btnMostrarTodo.UseVisualStyleBackColor = false;
             btnMostrarTodo.Click += btnMostrarTodo_Click;
             // 
             // dgvLista
@@ -78,6 +83,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(225, 225, 225);
             ClientSize = new Size(748, 376);
             Controls.Add(dgvLista);
             Controls.Add(btnMostrarTodo);
@@ -86,6 +92,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "SubFrmLista";
             Text = "Lista de Asistencia";
+            Load += SubFrmLista_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvLista).EndInit();
             ResumeLayout(false);
             PerformLayout();
