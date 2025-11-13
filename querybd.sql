@@ -1,7 +1,3 @@
-# Base de Datos en Heidi
-
-''' mysql
-
 CREATE DATABASE IF NOT EXISTS AsistenciaUniversitaria;
 USE AsistenciaUniversitaria;
 
@@ -91,6 +87,13 @@ CREATE TABLE UsuarioSistema (
     fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS Configuracion (
+    id_config INT AUTO_INCREMENT PRIMARY KEY,
+    id_evento_actual INT,
+    ruta_imagen VARCHAR(255)
+);
+
+
 -- Tipos de persona
 INSERT INTO TipoPersona (nombre) VALUES
 ('Estudiante'),
@@ -157,10 +160,9 @@ INSERT INTO Asistencia (id_evento, id_persona, estado) VALUES
 (3, 4, 'No Asistió'),
 (3, 5, 'Asistió');
 
+
 -- Usuarios del sistema
 INSERT INTO UsuarioSistema (usuario, clave, rol)
 VALUES
 ('admin', SHA2('admin123', 256), 'Administrador'),
 ('registro1', SHA2('registro123', 256), 'Registrador');
-
-'''

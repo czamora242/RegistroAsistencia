@@ -77,8 +77,9 @@
             panelContenido.Controls.Add(panelRegistro);
             panelContenido.Dock = DockStyle.Fill;
             panelContenido.Location = new Point(0, 0);
+            panelContenido.Margin = new Padding(3, 2, 3, 2);
             panelContenido.Name = "panelContenido";
-            panelContenido.Size = new Size(1282, 603);
+            panelContenido.Size = new Size(1122, 452);
             panelContenido.TabIndex = 0;
             // 
             // panel1
@@ -88,19 +89,21 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label6);
-            panel1.Location = new Point(729, 0);
+            panel1.Location = new Point(638, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(642, 603);
+            panel1.Size = new Size(562, 452);
             panel1.TabIndex = 1;
             // 
             // dtgRegistro
             // 
             dtgRegistro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgRegistro.Columns.AddRange(new DataGridViewColumn[] { nombre, apellidos, dni, correo, telefono, tipo, programa });
-            dtgRegistro.Location = new Point(37, 154);
+            dtgRegistro.Location = new Point(32, 116);
+            dtgRegistro.Margin = new Padding(3, 2, 3, 2);
             dtgRegistro.Name = "dtgRegistro";
             dtgRegistro.RowHeadersWidth = 51;
-            dtgRegistro.Size = new Size(564, 401);
+            dtgRegistro.Size = new Size(494, 301);
             dtgRegistro.TabIndex = 47;
             // 
             // nombre
@@ -161,37 +164,38 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = Color.FromArgb(225, 225, 225);
-            button4.Location = new Point(479, 93);
+            button4.Location = new Point(419, 70);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(134, 32);
+            button4.Size = new Size(117, 24);
             button4.TabIndex = 43;
             button4.Text = "BUSCAR";
             button4.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(106, 96);
+            textBox1.Location = new Point(93, 72);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(361, 27);
+            textBox1.Size = new Size(316, 23);
             textBox1.TabIndex = 44;
             // 
             // label5
             // 
             label5.ForeColor = Color.FromArgb(9, 15, 70);
-            label5.Location = new Point(38, 93);
+            label5.Location = new Point(33, 70);
             label5.Name = "label5";
-            label5.Size = new Size(113, 39);
+            label5.Size = new Size(99, 29);
             label5.TabIndex = 45;
             label5.Text = "Buscar:";
-
             // 
             // label6
             // 
             label6.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(9, 15, 70);
-            label6.Location = new Point(157, 47);
+            label6.Location = new Point(137, 35);
             label6.Name = "label6";
-            label6.Size = new Size(326, 50);
+            label6.Size = new Size(285, 38);
             label6.TabIndex = 46;
             label6.Text = "BUSQUEDA ";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -219,8 +223,9 @@
             panelRegistro.Controls.Add(label4);
             panelRegistro.Dock = DockStyle.Left;
             panelRegistro.Location = new Point(0, 0);
+            panelRegistro.Margin = new Padding(3, 2, 3, 2);
             panelRegistro.Name = "panelRegistro";
-            panelRegistro.Size = new Size(729, 603);
+            panelRegistro.Size = new Size(638, 452);
             panelRegistro.TabIndex = 0;
             // 
             // btnEliminar
@@ -232,9 +237,10 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = Color.FromArgb(225, 225, 225);
-            btnEliminar.Location = new Point(532, 484);
+            btnEliminar.Location = new Point(466, 363);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(134, 32);
+            btnEliminar.Size = new Size(117, 24);
             btnEliminar.TabIndex = 56;
             btnEliminar.Text = "ELIMINAR";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -249,9 +255,10 @@
             btnActualizar.FlatStyle = FlatStyle.Flat;
             btnActualizar.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnActualizar.ForeColor = Color.FromArgb(225, 225, 225);
-            btnActualizar.Location = new Point(380, 484);
+            btnActualizar.Location = new Point(332, 363);
+            btnActualizar.Margin = new Padding(3, 2, 3, 2);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(134, 32);
+            btnActualizar.Size = new Size(117, 24);
             btnActualizar.TabIndex = 55;
             btnActualizar.Text = "ACTUALIZAR";
             btnActualizar.UseVisualStyleBackColor = false;
@@ -266,9 +273,10 @@
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLimpiar.ForeColor = Color.FromArgb(225, 225, 225);
-            btnLimpiar.Location = new Point(222, 484);
+            btnLimpiar.Location = new Point(194, 363);
+            btnLimpiar.Margin = new Padding(3, 2, 3, 2);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(134, 32);
+            btnLimpiar.Size = new Size(117, 24);
             btnLimpiar.TabIndex = 54;
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -283,9 +291,10 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.FromArgb(225, 225, 225);
-            btnGuardar.Location = new Point(67, 484);
+            btnGuardar.Location = new Point(59, 363);
+            btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(134, 32);
+            btnGuardar.Size = new Size(117, 24);
             btnGuardar.TabIndex = 53;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = false;
@@ -295,115 +304,123 @@
             // 
             cbPrograma.FormattingEnabled = true;
             cbPrograma.Items.AddRange(new object[] { "Pregrado", "Posgrado" });
-            cbPrograma.Location = new Point(492, 376);
+            cbPrograma.Location = new Point(430, 282);
+            cbPrograma.Margin = new Padding(3, 2, 3, 2);
             cbPrograma.Name = "cbPrograma";
-            cbPrograma.Size = new Size(165, 28);
+            cbPrograma.Size = new Size(145, 23);
             cbPrograma.TabIndex = 52;
             // 
             // label3
             // 
             label3.ForeColor = Color.FromArgb(9, 15, 70);
-            label3.Location = new Point(402, 377);
+            label3.Location = new Point(352, 283);
             label3.Name = "label3";
-            label3.Size = new Size(113, 39);
+            label3.Size = new Size(99, 29);
             label3.TabIndex = 51;
             label3.Text = "Programa:";
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(213, 321);
+            txtTelefono.Location = new Point(186, 241);
+            txtTelefono.Margin = new Padding(3, 2, 3, 2);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(361, 27);
+            txtTelefono.Size = new Size(316, 23);
             txtTelefono.TabIndex = 50;
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(213, 271);
+            txtCorreo.Location = new Point(186, 203);
+            txtCorreo.Margin = new Padding(3, 2, 3, 2);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(361, 27);
+            txtCorreo.Size = new Size(316, 23);
             txtCorreo.TabIndex = 49;
             // 
             // txtDNI
             // 
-            txtDNI.Location = new Point(213, 222);
+            txtDNI.Location = new Point(186, 166);
+            txtDNI.Margin = new Padding(3, 2, 3, 2);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(361, 27);
+            txtDNI.Size = new Size(316, 23);
             txtDNI.TabIndex = 48;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(213, 171);
+            txtApellido.Location = new Point(186, 128);
+            txtApellido.Margin = new Padding(3, 2, 3, 2);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(361, 27);
+            txtApellido.Size = new Size(316, 23);
             txtApellido.TabIndex = 47;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(213, 118);
+            txtNombre.Location = new Point(186, 88);
+            txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(361, 27);
+            txtNombre.Size = new Size(316, 23);
             txtNombre.TabIndex = 46;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // cbTipo
             // 
             cbTipo.FormattingEnabled = true;
             cbTipo.Items.AddRange(new object[] { "Estudiante", "Docente", "Invitado" });
-            cbTipo.Location = new Point(157, 376);
+            cbTipo.Location = new Point(137, 282);
+            cbTipo.Margin = new Padding(3, 2, 3, 2);
             cbTipo.Name = "cbTipo";
-            cbTipo.Size = new Size(179, 28);
+            cbTipo.Size = new Size(157, 23);
             cbTipo.TabIndex = 45;
             // 
             // label2
             // 
             label2.ForeColor = Color.FromArgb(9, 15, 70);
-            label2.Location = new Point(87, 376);
+            label2.Location = new Point(76, 282);
             label2.Name = "label2";
-            label2.Size = new Size(113, 39);
+            label2.Size = new Size(99, 29);
             label2.TabIndex = 44;
             label2.Text = "Tipo:";
             // 
             // lblTelefono
             // 
             lblTelefono.ForeColor = Color.FromArgb(9, 15, 70);
-            lblTelefono.Location = new Point(108, 324);
+            lblTelefono.Location = new Point(94, 243);
             lblTelefono.Name = "lblTelefono";
-            lblTelefono.Size = new Size(113, 39);
+            lblTelefono.Size = new Size(99, 29);
             lblTelefono.TabIndex = 43;
             lblTelefono.Text = "Teléfono:";
             // 
             // lblCorreo
             // 
             lblCorreo.ForeColor = Color.FromArgb(9, 15, 70);
-            lblCorreo.Location = new Point(108, 273);
+            lblCorreo.Location = new Point(94, 205);
             lblCorreo.Name = "lblCorreo";
-            lblCorreo.Size = new Size(113, 39);
+            lblCorreo.Size = new Size(99, 29);
             lblCorreo.TabIndex = 42;
             lblCorreo.Text = "Correo:";
             // 
             // lblDocumento
             // 
             lblDocumento.ForeColor = Color.FromArgb(9, 15, 70);
-            lblDocumento.Location = new Point(108, 224);
+            lblDocumento.Location = new Point(94, 168);
             lblDocumento.Name = "lblDocumento";
-            lblDocumento.Size = new Size(113, 39);
+            lblDocumento.Size = new Size(99, 29);
             lblDocumento.TabIndex = 41;
             lblDocumento.Text = "Documento:";
             // 
             // lblApellidos
             // 
             lblApellidos.ForeColor = Color.FromArgb(9, 15, 70);
-            lblApellidos.Location = new Point(108, 175);
+            lblApellidos.Location = new Point(94, 131);
             lblApellidos.Name = "lblApellidos";
-            lblApellidos.Size = new Size(113, 39);
+            lblApellidos.Size = new Size(99, 29);
             lblApellidos.TabIndex = 40;
             lblApellidos.Text = "Apellidos:";
             // 
             // lblNombre
             // 
             lblNombre.ForeColor = Color.FromArgb(9, 15, 70);
-            lblNombre.Location = new Point(108, 121);
+            lblNombre.Location = new Point(94, 91);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(113, 39);
+            lblNombre.Size = new Size(99, 29);
             lblNombre.TabIndex = 39;
             lblNombre.Text = "Nombres:";
             // 
@@ -411,21 +428,22 @@
             // 
             label4.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(9, 15, 70);
-            label4.Location = new Point(222, 54);
+            label4.Location = new Point(194, 40);
             label4.Name = "label4";
-            label4.Size = new Size(326, 50);
+            label4.Size = new Size(285, 38);
             label4.TabIndex = 38;
             label4.Text = "REGISTRO DE LAS PERSONAS";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SubFrmPersonas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1282, 603);
+            ClientSize = new Size(1122, 452);
             ControlBox = false;
             Controls.Add(panelContenido);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "SubFrmPersonas";
             Text = "SubFrmPersonas";
             Load += SubFrmPersonas_Load;
