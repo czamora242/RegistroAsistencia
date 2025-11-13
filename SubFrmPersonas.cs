@@ -200,5 +200,10 @@ namespace pyRegistroAsistencia
                 }
             }
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
