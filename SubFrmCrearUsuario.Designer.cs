@@ -30,28 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubFrmCrearUsuario));
             lblRegistroUsuarios = new Label();
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
-            textBox2 = new TextBox();
+            txtUsuario = new TextBox();
+            cmbRol = new ComboBox();
+            txtClave = new TextBox();
             lblUsuario = new Label();
             lblContraseña = new Label();
             lblRol = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnGuardar = new Button();
+            btnActualizar = new Button();
+            btnLimpiar = new Button();
             label1 = new Label();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            dataGridView1 = new DataGridView();
-            usuario = new DataGridViewTextBoxColumn();
-            rol = new DataGridViewComboBoxColumn();
-            estado = new DataGridViewComboBoxColumn();
-            fecha_creacion = new DataGridViewTextBoxColumn();
+            btnTodos = new Button();
+            btnRegistrador = new Button();
+            btnConsultor = new Button();
+            dgvUsuarios = new DataGridView();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            button7 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnAdministrador = new Button();
+            id_usuario = new DataGridViewTextBoxColumn();
+            usuario = new DataGridViewTextBoxColumn();
+            clave = new DataGridViewTextBoxColumn();
+            rol = new DataGridViewTextBoxColumn();
+            estado = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -66,27 +67,27 @@
             lblRegistroUsuarios.TabIndex = 0;
             lblRegistroUsuarios.Text = "REGISTRO DE USUARIOS";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Location = new Point(170, 253);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(232, 27);
-            textBox1.TabIndex = 1;
+            txtUsuario.Location = new Point(170, 253);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(232, 27);
+            txtUsuario.TabIndex = 1;
             // 
-            // comboBox1
+            // cmbRol
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(170, 192);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(232, 28);
-            comboBox1.TabIndex = 3;
+            cmbRol.FormattingEnabled = true;
+            cmbRol.Location = new Point(170, 192);
+            cmbRol.Name = "cmbRol";
+            cmbRol.Size = new Size(232, 28);
+            cmbRol.TabIndex = 3;
             // 
-            // textBox2
+            // txtClave
             // 
-            textBox2.Location = new Point(170, 309);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(232, 27);
-            textBox2.TabIndex = 4;
+            txtClave.Location = new Point(170, 309);
+            txtClave.Name = "txtClave";
+            txtClave.Size = new Size(232, 27);
+            txtClave.TabIndex = 4;
             // 
             // lblUsuario
             // 
@@ -115,38 +116,41 @@
             lblRol.TabIndex = 7;
             lblRol.Text = "Rol:";
             // 
-            // button1
+            // btnGuardar
             // 
-            button1.BackColor = Color.FromArgb(9, 15, 70);
-            button1.ForeColor = SystemColors.HighlightText;
-            button1.Location = new Point(31, 391);
-            button1.Name = "button1";
-            button1.Size = new Size(119, 29);
-            button1.TabIndex = 10;
-            button1.Text = "GUARDAR";
-            button1.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.FromArgb(9, 15, 70);
+            btnGuardar.ForeColor = SystemColors.HighlightText;
+            btnGuardar.Location = new Point(31, 391);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(119, 29);
+            btnGuardar.TabIndex = 10;
+            btnGuardar.Text = "GUARDAR";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
-            // button2
+            // btnActualizar
             // 
-            button2.BackColor = Color.FromArgb(9, 15, 70);
-            button2.ForeColor = SystemColors.HighlightText;
-            button2.Location = new Point(181, 391);
-            button2.Name = "button2";
-            button2.Size = new Size(119, 29);
-            button2.TabIndex = 11;
-            button2.Text = "ACTUALIZAR";
-            button2.UseVisualStyleBackColor = false;
+            btnActualizar.BackColor = Color.FromArgb(9, 15, 70);
+            btnActualizar.ForeColor = SystemColors.HighlightText;
+            btnActualizar.Location = new Point(181, 391);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(119, 29);
+            btnActualizar.TabIndex = 11;
+            btnActualizar.Text = "ACTUALIZAR";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
-            // button3
+            // btnLimpiar
             // 
-            button3.BackColor = Color.FromArgb(9, 15, 70);
-            button3.ForeColor = SystemColors.HighlightText;
-            button3.Location = new Point(331, 391);
-            button3.Name = "button3";
-            button3.Size = new Size(119, 29);
-            button3.TabIndex = 12;
-            button3.Text = "LIMPIAR";
-            button3.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(9, 15, 70);
+            btnLimpiar.ForeColor = SystemColors.HighlightText;
+            btnLimpiar.Location = new Point(331, 391);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(119, 29);
+            btnLimpiar.TabIndex = 12;
+            btnLimpiar.Text = "LIMPIAR";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // label1
             // 
@@ -158,78 +162,47 @@
             label1.TabIndex = 13;
             label1.Text = "FILTRAR USUARIOS:";
             // 
-            // button4
+            // btnTodos
             // 
-            button4.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(553, 108);
-            button4.Name = "button4";
-            button4.Size = new Size(83, 29);
-            button4.TabIndex = 14;
-            button4.Text = "TODOS";
-            button4.UseVisualStyleBackColor = true;
+            btnTodos.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTodos.Location = new Point(553, 108);
+            btnTodos.Name = "btnTodos";
+            btnTodos.Size = new Size(83, 29);
+            btnTodos.TabIndex = 14;
+            btnTodos.Text = "TODOS";
+            btnTodos.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnRegistrador
             // 
-            button5.Font = new Font("Segoe UI", 8F);
-            button5.Location = new Point(768, 108);
-            button5.Name = "button5";
-            button5.Size = new Size(118, 29);
-            button5.TabIndex = 15;
-            button5.Text = "REGISTRADOR";
-            button5.UseVisualStyleBackColor = true;
+            btnRegistrador.Font = new Font("Segoe UI", 8F);
+            btnRegistrador.Location = new Point(768, 108);
+            btnRegistrador.Name = "btnRegistrador";
+            btnRegistrador.Size = new Size(118, 29);
+            btnRegistrador.TabIndex = 15;
+            btnRegistrador.Text = "REGISTRADOR";
+            btnRegistrador.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnConsultor
             // 
-            button6.Font = new Font("Segoe UI", 8F);
-            button6.Location = new Point(892, 108);
-            button6.Name = "button6";
-            button6.Size = new Size(118, 29);
-            button6.TabIndex = 16;
-            button6.Text = "CONSULTOR";
-            button6.UseVisualStyleBackColor = true;
+            btnConsultor.Font = new Font("Segoe UI", 8F);
+            btnConsultor.Location = new Point(892, 108);
+            btnConsultor.Name = "btnConsultor";
+            btnConsultor.Size = new Size(118, 29);
+            btnConsultor.TabIndex = 16;
+            btnConsultor.Text = "CONSULTOR";
+            btnConsultor.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { usuario, rol, estado, fecha_creacion });
-            dataGridView1.Location = new Point(517, 180);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(503, 188);
-            dataGridView1.TabIndex = 17;
-            // 
-            // usuario
-            // 
-            usuario.HeaderText = "Usuario";
-            usuario.MinimumWidth = 6;
-            usuario.Name = "usuario";
-            usuario.Width = 125;
-            // 
-            // rol
-            // 
-            rol.HeaderText = "Rol";
-            rol.MinimumWidth = 6;
-            rol.Name = "rol";
-            rol.Resizable = DataGridViewTriState.True;
-            rol.SortMode = DataGridViewColumnSortMode.Automatic;
-            rol.Width = 125;
-            // 
-            // estado
-            // 
-            estado.HeaderText = "Estado";
-            estado.MinimumWidth = 6;
-            estado.Name = "estado";
-            estado.Width = 125;
-            // 
-            // fecha_creacion
-            // 
-            fecha_creacion.HeaderText = "Fecha Creación";
-            fecha_creacion.MinimumWidth = 6;
-            fecha_creacion.Name = "fecha_creacion";
-            fecha_creacion.Resizable = DataGridViewTriState.True;
-            fecha_creacion.SortMode = DataGridViewColumnSortMode.NotSortable;
-            fecha_creacion.Width = 125;
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { id_usuario, usuario, clave, rol, estado });
+            dgvUsuarios.Location = new Point(466, 161);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.RowHeadersVisible = false;
+            dgvUsuarios.RowHeadersWidth = 51;
+            dgvUsuarios.Size = new Size(554, 188);
+            dgvUsuarios.TabIndex = 17;
+            dgvUsuarios.CellContentClick += dgvUsuarios_CellContentClick;
             // 
             // pictureBox1
             // 
@@ -251,42 +224,85 @@
             label2.TabIndex = 19;
             label2.Text = "Rol:";
             // 
-            // button7
+            // btnAdministrador
             // 
-            button7.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.Location = new Point(644, 108);
-            button7.Name = "button7";
-            button7.Size = new Size(118, 29);
-            button7.TabIndex = 20;
-            button7.Text = "ADMINISTRADOR";
-            button7.UseVisualStyleBackColor = true;
+            btnAdministrador.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdministrador.Location = new Point(644, 108);
+            btnAdministrador.Name = "btnAdministrador";
+            btnAdministrador.Size = new Size(118, 29);
+            btnAdministrador.TabIndex = 20;
+            btnAdministrador.Text = "ADMINISTRADOR";
+            btnAdministrador.UseVisualStyleBackColor = true;
+            // 
+            // id_usuario
+            // 
+            id_usuario.DataPropertyName = "id_usuario";
+            id_usuario.HeaderText = "ID";
+            id_usuario.MinimumWidth = 6;
+            id_usuario.Name = "id_usuario";
+            id_usuario.Width = 50;
+            // 
+            // usuario
+            // 
+            usuario.DataPropertyName = "usuario";
+            usuario.HeaderText = "Usuario";
+            usuario.MinimumWidth = 6;
+            usuario.Name = "usuario";
+            usuario.Width = 125;
+            // 
+            // clave
+            // 
+            clave.DataPropertyName = "clave";
+            clave.HeaderText = "Contraseña";
+            clave.MinimumWidth = 6;
+            clave.Name = "clave";
+            clave.Width = 125;
+            // 
+            // rol
+            // 
+            rol.DataPropertyName = "rol";
+            rol.HeaderText = "Rol";
+            rol.MinimumWidth = 6;
+            rol.Name = "rol";
+            rol.Resizable = DataGridViewTriState.True;
+            rol.Width = 125;
+            // 
+            // estado
+            // 
+            estado.DataPropertyName = "estado";
+            estado.HeaderText = "Estado";
+            estado.MinimumWidth = 6;
+            estado.Name = "estado";
+            estado.Resizable = DataGridViewTriState.True;
+            estado.SortMode = DataGridViewColumnSortMode.NotSortable;
+            estado.Width = 125;
             // 
             // SubFrmCrearUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1032, 553);
-            Controls.Add(button7);
+            Controls.Add(btnAdministrador);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Controls.Add(dataGridView1);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
+            Controls.Add(dgvUsuarios);
+            Controls.Add(btnConsultor);
+            Controls.Add(btnRegistrador);
+            Controls.Add(btnTodos);
             Controls.Add(label1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnActualizar);
+            Controls.Add(btnGuardar);
             Controls.Add(lblRol);
             Controls.Add(lblContraseña);
             Controls.Add(lblUsuario);
-            Controls.Add(textBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox1);
+            Controls.Add(txtClave);
+            Controls.Add(cmbRol);
+            Controls.Add(txtUsuario);
             Controls.Add(lblRegistroUsuarios);
             Name = "SubFrmCrearUsuario";
             Text = "SubFrmCrearUsuario";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -295,26 +311,27 @@
         #endregion
 
         private Label lblRegistroUsuarios;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
+        private TextBox txtUsuario;
+        private ComboBox cmbRol;
+        private TextBox txtClave;
         private Label lblUsuario;
         private Label lblContraseña;
         private Label lblRol;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnGuardar;
+        private Button btnActualizar;
+        private Button btnLimpiar;
         private Label label1;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn usuario;
-        private DataGridViewComboBoxColumn rol;
-        private DataGridViewComboBoxColumn estado;
-        private DataGridViewTextBoxColumn fecha_creacion;
+        private Button btnTodos;
+        private Button btnRegistrador;
+        private Button btnConsultor;
+        private DataGridView dgvUsuarios;
         private PictureBox pictureBox1;
         private Label label2;
-        private Button button7;
+        private Button btnAdministrador;
+        private DataGridViewTextBoxColumn id_usuario;
+        private DataGridViewTextBoxColumn usuario;
+        private DataGridViewTextBoxColumn clave;
+        private DataGridViewTextBoxColumn rol;
+        private DataGridViewTextBoxColumn estado;
     }
 }
