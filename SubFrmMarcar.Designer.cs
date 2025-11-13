@@ -22,90 +22,85 @@
             txtDni = new TextBox();
             btnMarcar = new Button();
             dgvAsistencias = new DataGridView();
-            dgvPersonas = new DataGridView();
             lblResultado = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvAsistencias).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvPersonas).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(20, 12);
+            label1.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(9, 15, 70);
+            label1.Location = new Point(20, 19);
             label1.Name = "label1";
-            label1.Size = new Size(210, 25);
+            label1.Size = new Size(172, 20);
             label1.TabIndex = 0;
             label1.Text = "Marcar Asistencia (DNI)";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(9, 15, 70);
             label2.Location = new Point(20, 55);
             label2.Name = "label2";
-            label2.Size = new Size(90, 15);
+            label2.Size = new Size(112, 15);
             label2.TabIndex = 1;
-            label2.Text = "Documento (DNI):";
+            label2.Text = "Ingrese su DNI aquí:";
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(120, 52);
+            txtDni.Location = new Point(140, 51);
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(180, 23);
             txtDni.TabIndex = 2;
             // 
             // btnMarcar
             // 
-            btnMarcar.Location = new Point(320, 51);
+            btnMarcar.BackColor = Color.FromArgb(9, 15, 70);
+            btnMarcar.FlatAppearance.BorderColor = Color.Silver;
+            btnMarcar.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
+            btnMarcar.FlatStyle = FlatStyle.Flat;
+            btnMarcar.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMarcar.ForeColor = Color.FromArgb(225, 225, 225);
+            btnMarcar.Location = new Point(341, 46);
             btnMarcar.Name = "btnMarcar";
-            btnMarcar.Size = new Size(120, 25);
+            btnMarcar.Size = new Size(156, 32);
             btnMarcar.TabIndex = 3;
             btnMarcar.Text = "Marcar Asistencia";
-            btnMarcar.UseVisualStyleBackColor = true;
+            btnMarcar.UseVisualStyleBackColor = false;
             btnMarcar.Click += btnMarcar_Click;
-            // 
-            // lblResultado
-            // 
-            lblResultado.AutoSize = false;
-            lblResultado.Size = new Size(420, 30);
-            lblResultado.Location = new Point(20, 85);
-            lblResultado.Name = "lblResultado";
-            lblResultado.Text = "";
-            lblResultado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            // 
-            // dgvPersonas
-            // 
-            dgvPersonas.AllowUserToAddRows = false;
-            dgvPersonas.AllowUserToDeleteRows = false;
-            dgvPersonas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvPersonas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPersonas.Location = new Point(20, 125);
-            dgvPersonas.Name = "dgvPersonas";
-            dgvPersonas.ReadOnly = true;
-            dgvPersonas.RowHeadersVisible = false;
-            dgvPersonas.Size = new Size(420, 200);
-            dgvPersonas.TabIndex = 4;
             // 
             // dgvAsistencias
             // 
             dgvAsistencias.AllowUserToAddRows = false;
             dgvAsistencias.AllowUserToDeleteRows = false;
+            dgvAsistencias.Anchor = AnchorStyles.None;
             dgvAsistencias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvAsistencias.BackgroundColor = Color.FromArgb(65, 92, 149);
             dgvAsistencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAsistencias.Location = new Point(460, 125);
+            dgvAsistencias.Location = new Point(140, 118);
             dgvAsistencias.Name = "dgvAsistencias";
             dgvAsistencias.ReadOnly = true;
             dgvAsistencias.RowHeadersVisible = false;
-            dgvAsistencias.Size = new Size(620, 200);
-            dgvAsistencias.TabIndex = 5;
+            dgvAsistencias.Size = new Size(800, 250);
+            dgvAsistencias.TabIndex = 4;
+            // 
+            // lblResultado
+            // 
+            lblResultado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblResultado.Location = new Point(20, 85);
+            lblResultado.Name = "lblResultado";
+            lblResultado.Size = new Size(600, 30);
+            lblResultado.TabIndex = 5;
             // 
             // SubFrmMarcar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1100, 350);
+            BackColor = Color.FromArgb(225, 225, 225);
+            ClientSize = new Size(1100, 420);
             Controls.Add(dgvAsistencias);
-            Controls.Add(dgvPersonas);
             Controls.Add(lblResultado);
             Controls.Add(btnMarcar);
             Controls.Add(txtDni);
@@ -115,7 +110,6 @@
             Text = "Marcar Asistencia";
             Load += SubFrmMarcar_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAsistencias).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvPersonas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,7 +121,6 @@
         private TextBox txtDni;
         private Button btnMarcar;
         private DataGridView dgvAsistencias;
-        private DataGridView dgvPersonas;
         private Label lblResultado;
     }
 }
