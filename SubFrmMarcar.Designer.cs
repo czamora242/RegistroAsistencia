@@ -25,9 +25,9 @@
             lblResultado = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvAsistencias).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
+            
+            //label1
+            
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(9, 15, 70);
@@ -36,9 +36,9 @@
             label1.Size = new Size(172, 20);
             label1.TabIndex = 0;
             label1.Text = "Marcar Asistencia (DNI)";
-            // 
-            // label2
-            // 
+             
+            //label2
+            
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(9, 15, 70);
@@ -47,16 +47,16 @@
             label2.Size = new Size(112, 15);
             label2.TabIndex = 1;
             label2.Text = "Ingrese su DNI aquí:";
-            // 
-            // txtDni
-            // 
+            
+            //txtDni
+            
             txtDni.Location = new Point(140, 51);
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(180, 23);
             txtDni.TabIndex = 2;
-            // 
+             
             // btnMarcar
-            // 
+            
             btnMarcar.BackColor = Color.FromArgb(9, 15, 70);
             btnMarcar.FlatAppearance.BorderColor = Color.Silver;
             btnMarcar.FlatAppearance.MouseOverBackColor = Color.FromArgb(156, 156, 156);
@@ -70,9 +70,9 @@
             btnMarcar.Text = "Marcar Asistencia";
             btnMarcar.UseVisualStyleBackColor = false;
             btnMarcar.Click += btnMarcar_Click;
-            // 
-            // dgvAsistencias
-            // 
+            
+            //dgvAsistencias
+            
             dgvAsistencias.AllowUserToAddRows = false;
             dgvAsistencias.AllowUserToDeleteRows = false;
             dgvAsistencias.Anchor = AnchorStyles.None;
@@ -85,17 +85,17 @@
             dgvAsistencias.RowHeadersVisible = false;
             dgvAsistencias.Size = new Size(800, 250);
             dgvAsistencias.TabIndex = 4;
-            // 
-            // lblResultado
-            // 
+            
+            //lblResultado
+            
             lblResultado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblResultado.Location = new Point(20, 85);
             lblResultado.Name = "lblResultado";
             lblResultado.Size = new Size(600, 30);
             lblResultado.TabIndex = 5;
-            // 
-            // SubFrmMarcar
-            // 
+             
+            //SubFrmMarcar
+            
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(225, 225, 225);

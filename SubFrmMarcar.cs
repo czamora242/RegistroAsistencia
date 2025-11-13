@@ -26,7 +26,7 @@ namespace pyRegistroAsistencia
             dgvAsistencias.DataBindingComplete += DgvAsistencias_DataBindingComplete;
         }
 
-        // Carga asistencias y marca todas como "No asistió" inicialmente
+        //Carga asistencias y marca todas como "No asistió" inicialmente
         private void CargarAsistencias()
         {
             try
@@ -54,7 +54,7 @@ namespace pyRegistroAsistencia
             }
         }
 
-        // 🔴 Pinta las celdas "No asistió" de rojo
+        //Pinta las celdas "No asistió" de rojo
         private void DgvAsistencias_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow row in dgvAsistencias.Rows)
@@ -68,7 +68,7 @@ namespace pyRegistroAsistencia
             }
         }
 
-        // Botón marcar asistencia
+        //Botón marcar asistencia
         private void btnMarcar_Click(object sender, EventArgs e)
         {
             string documento = txtDni.Text.Trim();
@@ -101,7 +101,7 @@ namespace pyRegistroAsistencia
                             return;
                         }
 
-                        // Cambiar solo esa celda a verde
+                        //Cambiar solo esa celda a verde
                         row.Cells["Estado"].Value = "Asistió";
                         row.Cells["Estado"].Style.BackColor = Color.Green;
                         row.Cells["Estado"].Style.ForeColor = Color.White;
