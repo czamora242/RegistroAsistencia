@@ -35,17 +35,23 @@ namespace pyRegistroAsistencia
                 {
                     conn.Open();
                     string sql = @"SELECT 
-                            p.id_persona AS 'ID',
-                            p.documento AS 'DNI',
-                            CONCAT(p.nombres, ' ', p.apellidos) AS 'Nombre',
-                            'No asistió' AS 'Estado'
-                        FROM Persona p
-                        ORDER BY p.nombres, p.apellidos;";
+                    p.id_persona AS 'ID',
+                    p.documento AS 'DNI',
+                    CONCAT(p.nombres, ' ', p.apellidos) AS 'Nombre',
+                    'No asistió' AS 'Estado'
+                FROM Persona p
+                ORDER BY p.nombres, p.apellidos;";
 
                     MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dgvAsistencias.DataSource = dt;
+
+                    // Numerar filas
+                    foreach (DataGridViewRow row in dgvAsistencias.Rows)
+                    {
+                        row.HeaderCell.Value = (row.Index + 1).ToString();
+                    }
                 }
             }
             catch (Exception ex)
@@ -53,6 +59,7 @@ namespace pyRegistroAsistencia
                 MessageBox.Show("Error al cargar asistencias: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         //Pinta las celdas "No asistió" de rojo
         private void DgvAsistencias_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
