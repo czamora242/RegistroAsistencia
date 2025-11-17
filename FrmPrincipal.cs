@@ -10,6 +10,7 @@ namespace pyRegistroAsistencia
         {
             InitializeComponent();
             rolUsuario = rol;
+            AbrirFormularioHijo(new SubFrmInicio());
         }
 
 
