@@ -29,23 +29,30 @@
 
 ### 🧰 Tareas
 
-* [ ] Crear estructura de base de datos (script SQL).
-* [ ] Conectar app con la base de datos (MySQL).
+* [✅] Crear estructura de base de datos (script SQL).
+* [ ✅] Conectar app con la base de datos (MySQL).
 * [ ] Crear formulario de login.
 * [ ] Crear módulo “Personas” (listar/agregar/editar/eliminar).
 * [ ] Validar correos y DNI únicos.
 * [ ] Diseño inicial de menú lateral e interfaz base (Inicio – Personas – Ajustes).
-* Inicio: Nombre del evento, foto, descripción del evento, contador de asistentes a tiempor real.
-* Marcar: verificar si la persona registrada asistió
-* personas: Registrar y mostrar de participantes en el evento -> registrador
-* lista: mostrar los participantes en el evento -> solo consultor
-* Evento: Añadir Eventos a la base de datos y añadir imagen
-* Ajustes: Nombre del evento, fotos, tamaño de fuente, descripcion del evento, cerrar sesión
-* Ayuda: Texto e imágenes explicando el uso de la app
+* Inicio: Nombre del evento, foto, descripción del evento, contador de asistentes a tiempor real.✅
+* Marcar: verificar si la persona registrada asistió✅
+poner en otro grid, las personas q ya estan registradas, las verdecitas
+y si se equivoco, poder borrar la asistencia
+agregar un boton para filtrar por asistencia, y por defecto q este en asistió❌
+* personas: Registrar y mostrar de participantes en el evento -> registrador✅
+* lista: mostrar los participantes en el evento -> solo consultor✅
+* Evento: Añadir Eventos a la base de datos y añadir imagen✅
+- agregar una tabla q diga presencial, presencial o virtual, y agregar combobox de tipo de evento, y tabla de tipo de evento
+modificar las tablas, para q no sea solo con codigo, para poder editar mejor❌
+* Ajustes: Nombre del evento, fotos, tamaño de fuente, descripcion del evento✅
+* Ayuda: Texto e imágenes explicando el uso de la app❌
 * reportes: Muestra el registro de varios eventos, descargar como pdf o como Excel, imprimir
-* usuarios: Separar cuentas de registradores para un evento en especifico, 3 o 4 personas registrarán en un evento, eliminar usuarios
-* Agregar una tabla tipo de evento
+* usuarios: Separar cuentas de registradores para un evento en especifico, 3 o 4 personas registrarán en un evento, eliminar usuarios✅
+- cuantas veces en el dia voy a registrar, en ajustes -> para registrar a una persona 2 veces❌
 
+* Agregar una tabla tipo de evento❌
+* Cerrar Sesion✅
 ---
 
 ## 🏃‍♀️ SPRINT 2 — **Eventos y Asistencias**
@@ -63,10 +70,10 @@
 
 ### 🧰 Tareas
 
-* [ ] Crear formulario de eventos (alta, edición, eliminación).
-* [ ] Crear formulario para marcar asistencia (por QR o DNI).
-* [ ] Crear vista “Lista” con filtro por evento.
-* [ ] Mostrar nombre del evento, participantes y estado.
+* [ ✅ ] Crear formulario de eventos (alta, edición, eliminación).
+* [ Maso ] Crear formulario para marcar asistencia (por QR o DNI).
+* [ Maso ] Crear vista “Lista” con filtro por evento.
+* [ ✅] Mostrar nombre del evento, participantes y estado.
 * [ ] Implementar validaciones (no duplicar asistencias).
 
 ---
