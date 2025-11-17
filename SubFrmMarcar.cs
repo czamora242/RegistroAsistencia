@@ -14,6 +14,7 @@ namespace pyRegistroAsistencia
     public partial class SubFrmMarcar : Form
     {
         string conexion = "Server=localhost;Database=AsistenciaUniversitaria;Uid=root;Pwd=123456;";
+        DataTable dtAsistencias;
 
         public SubFrmMarcar()
         {
@@ -26,7 +27,6 @@ namespace pyRegistroAsistencia
             dgvAsistencias.DataBindingComplete += DgvAsistencias_DataBindingComplete;
         }
 
-        //Carga asistencias y marca todas como "No asistió" inicialmente
         private void CargarAsistencias()
         {
             try
@@ -35,23 +35,20 @@ namespace pyRegistroAsistencia
                 {
                     conn.Open();
                     string sql = @"SELECT 
-                    p.id_persona AS 'ID',
-                    p.documento AS 'DNI',
-                    CONCAT(p.nombres, ' ', p.apellidos) AS 'Nombre',
-                    'No asistió' AS 'Estado'
-                FROM Persona p
-                ORDER BY p.nombres, p.apellidos;";
-
+                                    p.id_persona AS 'ID',
+                                    p.documento AS 'DNI',
+                                    CONCAT(p.nombres, ' ', p.apellidos) AS 'Nombre',
+                                    'No asistió' AS 'Estado'
+                                   FROM Persona p
+                                   ORDER BY p.nombres, p.apellidos;";
                     MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dgvAsistencias.DataSource = dt;
+                    dtAsistencias = new DataTable();
+                    da.Fill(dtAsistencias);
+                    dgvAsistencias.DataSource = dtAsistencias;
+                    ActualizarRegistradas();
 
-                    // Numerar filas
                     foreach (DataGridViewRow row in dgvAsistencias.Rows)
-                    {
                         row.HeaderCell.Value = (row.Index + 1).ToString();
-                    }
                 }
             }
             catch (Exception ex)
@@ -60,8 +57,6 @@ namespace pyRegistroAsistencia
             }
         }
 
-
-        //Pinta las celdas "No asistió" de rojo
         private void DgvAsistencias_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow row in dgvAsistencias.Rows)
@@ -72,14 +67,17 @@ namespace pyRegistroAsistencia
                     row.Cells["Estado"].Style.BackColor = Color.Red;
                     row.Cells["Estado"].Style.ForeColor = Color.White;
                 }
+                else if (estado == "Asistió")
+                {
+                    row.Cells["Estado"].Style.BackColor = Color.Green;
+                    row.Cells["Estado"].Style.ForeColor = Color.White;
+                }
             }
         }
 
-        //Botón marcar asistencia
         private void btnMarcar_Click(object sender, EventArgs e)
         {
             string documento = txtDni.Text.Trim();
-
             if (string.IsNullOrEmpty(documento))
             {
                 lblResultado.ForeColor = Color.OrangeRed;
@@ -87,51 +85,90 @@ namespace pyRegistroAsistencia
                 return;
             }
 
-            try
+            bool encontrado = false;
+            foreach (DataGridViewRow row in dgvAsistencias.Rows)
             {
-                bool encontrado = false;
-
-                foreach (DataGridViewRow row in dgvAsistencias.Rows)
+                string dniFila = row.Cells["DNI"].Value.ToString();
+                if (dniFila == documento)
                 {
-                    string dniFila = row.Cells["DNI"].Value.ToString();
-
-                    if (dniFila == documento)
+                    encontrado = true;
+                    string estadoActual = row.Cells["Estado"].Value.ToString();
+                    if (estadoActual == "Asistió")
                     {
-                        encontrado = true;
+                        lblResultado.ForeColor = Color.Orange;
+                        lblResultado.Text = "⚠️ Esta persona ya fue marcada como presente.";
+                        return;
+                    }
 
-                        string estadoActual = row.Cells["Estado"].Value.ToString();
+                    row.Cells["Estado"].Value = "Asistió";
+                    row.Cells["Estado"].Style.BackColor = Color.Green;
+                    row.Cells["Estado"].Style.ForeColor = Color.White;
 
-                        if (estadoActual == "Asistió")
-                        {
-                            lblResultado.ForeColor = Color.Orange;
-                            lblResultado.Text = "⚠️ Esta persona ya fue marcada como presente.";
-                            return;
-                        }
+                    lblResultado.ForeColor = Color.Green;
+                    lblResultado.Text = "✅ Asistencia registrada correctamente.";
+                    txtDni.Clear();
+                    txtDni.Focus();
 
-                        //Cambiar solo esa celda a verde
-                        row.Cells["Estado"].Value = "Asistió";
-                        row.Cells["Estado"].Style.BackColor = Color.Green;
-                        row.Cells["Estado"].Style.ForeColor = Color.White;
+                    ActualizarRegistradas();
+                    AplicarFiltro();
+                    break;
+                }
+            }
 
-                        lblResultado.ForeColor = Color.Green;
-                        lblResultado.Text = "✅ Asistencia registrada correctamente.";
+            if (!encontrado)
+            {
+                lblResultado.ForeColor = Color.Red;
+                lblResultado.Text = "❌ El DNI ingresado no existe en la lista.";
+            }
+        }
 
-                        txtDni.Clear();
-                        txtDni.Focus();
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvRegistradas.CurrentRow != null)
+            {
+                // Obtener el ID de la fila seleccionada en dgvRegistradas
+                string idSeleccionado = dgvRegistradas.CurrentRow.Cells["ID"].Value.ToString();
+
+                // Buscar la fila correspondiente en dtAsistencias
+                foreach (DataRow row in dtAsistencias.Rows)
+                {
+                    if (row["ID"].ToString() == idSeleccionado)
+                    {
+                        row["Estado"] = "No asistió"; // Cambiar a No asistió
                         break;
                     }
                 }
 
-                if (!encontrado)
-                {
-                    lblResultado.ForeColor = Color.Red;
-                    lblResultado.Text = "❌ El DNI ingresado no existe en la lista.";
-                }
+                // Actualizar los DataGridView
+                ActualizarRegistradas();
+                AplicarFiltro();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al marcar asistencia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        }
+
+
+        private void ActualizarRegistradas()
+        {
+            DataView dv = new DataView(dtAsistencias);
+            dv.RowFilter = "Estado='Asistió'";
+            dgvRegistradas.DataSource = dv.ToTable();
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AplicarFiltro();
+        }
+
+        private void AplicarFiltro()
+        {
+            string filtro = cmbFiltro.SelectedItem.ToString();
+            DataView dv = new DataView(dtAsistencias);
+            if (filtro == "Asistió")
+                dv.RowFilter = "Estado='Asistió'";
+            else if (filtro == "No asistió")
+                dv.RowFilter = "Estado='No asistió'";
+            else
+                dv.RowFilter = "";
+            dgvAsistencias.DataSource = dv;
         }
     }
 }
