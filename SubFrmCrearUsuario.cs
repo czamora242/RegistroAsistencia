@@ -10,11 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using System;
-using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace pyRegistroAsistencia
@@ -30,6 +25,7 @@ namespace pyRegistroAsistencia
             CargarUsuarios();
 
             cmbRol.Items.AddRange(new string[] { "Administrador", "Registrador", "Consultor" });
+            cmbEstado.Items.AddRange(new string[] { "Activo", "Inactivo" });
             cmbRol.SelectedIndex = 0;
 
             // Eventos para los botones de filtro
@@ -92,53 +88,44 @@ namespace pyRegistroAsistencia
         {
             string usuario = txtUsuario.Text.Trim();
             string clave = txtClave.Text.Trim();
-            string rol = cmbRol.SelectedItem != null ? cmbRol.SelectedItem.ToString() : "";
+            string rol = cmbRol.SelectedItem?.ToString() ?? "";
+            string estado = cmbEstado.SelectedItem.ToString() ?? "" ;
 
             if (usuario == "" || clave == "" || rol == "")
             {
-                MessageBox.Show("Por favor, complete todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor complete todos los campos.");
                 return;
             }
 
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
                 conexion.Open();
-                string sql = "INSERT INTO usuariosistema (usuario, clave, rol, estado) VALUES (@usuario, @clave, @rol, 'Activo')";
-                using (MySqlCommand cmd = new MySqlCommand(sql, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@usuario", usuario);
-                    cmd.Parameters.AddWithValue("@clave", clave);
-                    cmd.Parameters.AddWithValue("@rol", rol);
+                string sql = @"INSERT INTO usuariosistema (usuario, clave, rol, estado)
+                       VALUES (@usuario, @clave, @rol, @estado)";
 
-                    try
-                    {
-                        int filas = cmd.ExecuteNonQuery();
-                        if (filas > 0)
-                        {
-                            MessageBox.Show("✅ Usuario guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LimpiarCampos();
-                            CargarUsuarios();
-                        }
-                        else
-                        {
-                            MessageBox.Show("⚠️ No se insertó ningún registro.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show($"❌ Error MySQL:\n{ex.Number} - {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                MySqlCommand cmd = new MySqlCommand(sql, conexion);
+
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@clave", clave);
+                cmd.Parameters.AddWithValue("@rol", rol);
+                cmd.Parameters.AddWithValue("@estado", estado);
+
+                cmd.ExecuteNonQuery();
             }
+
+            MessageBox.Show("Usuario creado correctamente.");
+            LimpiarCampos();
+            CargarUsuarios();
         }
 
 
         // --- ACTUALIZAR USUARIO ---
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (dgvUsuarios.CurrentRow == null)
             {
-                MessageBox.Show("Seleccione un usuario para actualizar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un usuario.");
                 return;
             }
 
@@ -146,38 +133,36 @@ namespace pyRegistroAsistencia
             string usuario = txtUsuario.Text.Trim();
             string clave = txtClave.Text.Trim();
             string rol = cmbRol.SelectedItem.ToString();
+            string estado = cmbEstado.SelectedItem.ToString();
 
-            string sql = "UPDATE usuariosistema SET usuario=@usuario, rol=@rol {0} WHERE id_usuario=@id_usuario";
-            string sqlFinal = (clave != "") ? string.Format(sql, ", clave=@clave") : string.Format(sql, "");
+            string sql = "UPDATE usuariosistema SET usuario=@usuario, rol=@rol, estado=@estado WHERE id_usuario=@id";
+
+            string sqlFinal = clave != "" ? string.Format(sql, ", clave=@clave") : string.Format(sql, "");
 
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
             {
                 conexion.Open();
-                using (MySqlCommand cmd = new MySqlCommand(sqlFinal, conexion))
-                {
-                    cmd.Parameters.AddWithValue("@usuario", usuario);
-                    cmd.Parameters.AddWithValue("@rol", rol);
-                    cmd.Parameters.AddWithValue("@id_usuario", id_usuario);
+                MySqlCommand cmd = new MySqlCommand(sqlFinal, conexion);
 
-                    if (clave != "")
-                        cmd.Parameters.AddWithValue("@clave", clave);
+                cmd.Parameters.AddWithValue("@id", id_usuario);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@rol", rol);
+                cmd.Parameters.AddWithValue("@estado", estado);
+               
 
-                    try
-                    {
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("✅ Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimpiarCampos();
-                        CargarUsuarios();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("❌ Error al actualizar:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                if (clave != "")
+                    cmd.Parameters.AddWithValue("@clave", clave);
+
+                cmd.ExecuteNonQuery();
             }
+
+            MessageBox.Show("Usuario actualizado.");
+            LimpiarCampos();
+            CargarUsuarios();
         }
 
-        // --- CARGAR USUARIOS (CON FILTRO OPCIONAL) ---
+
+        // --- CARGAR USUARIOS ---
         private void CargarUsuarios(string filtroRol = "TODOS")
         {
             using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
@@ -214,6 +199,7 @@ namespace pyRegistroAsistencia
             txtUsuario.Clear();
             txtClave.Clear();
             cmbRol.SelectedIndex = 0;
+            cmbEstado.SelectedIndex = 0;
             dgvUsuarios.ClearSelection();
         }
 
@@ -225,6 +211,41 @@ namespace pyRegistroAsistencia
             txtUsuario.Text = dgvUsuarios.Rows[e.RowIndex].Cells["usuario"].Value.ToString();
             txtClave.Text = dgvUsuarios.Rows[e.RowIndex].Cells["clave"].Value.ToString();
             cmbRol.Text = dgvUsuarios.Rows[e.RowIndex].Cells["rol"].Value.ToString();
+            cmbEstado.Text = dgvUsuarios.Rows[e.RowIndex].Cells["estado"].Value.ToString();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un usuario para eliminar.", "Advertencia",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["id_usuario"].Value);
+
+            DialogResult dr = MessageBox.Show("¿Seguro que deseas eliminar este usuario?",
+                                              "Confirmación",
+                                              MessageBoxButtons.YesNo,
+                                              MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.No) return;
+
+            using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+            {
+                conexion.Open();
+                string sql = "DELETE FROM usuariosistema WHERE id_usuario=@id";
+                using (MySqlCommand cmd = new MySqlCommand(sql, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Usuario eliminado correctamente.");
+            CargarUsuarios();
+        }
+
     }
 }

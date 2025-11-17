@@ -52,6 +52,9 @@
             pictureBox1 = new PictureBox();
             label2 = new Label();
             btnAdministrador = new Button();
+            cmbEstado = new ComboBox();
+            lblEstado = new Label();
+            btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -120,7 +123,7 @@
             // 
             btnGuardar.BackColor = Color.FromArgb(9, 15, 70);
             btnGuardar.ForeColor = SystemColors.HighlightText;
-            btnGuardar.Location = new Point(31, 391);
+            btnGuardar.Location = new Point(31, 437);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(119, 29);
             btnGuardar.TabIndex = 10;
@@ -132,7 +135,7 @@
             // 
             btnActualizar.BackColor = Color.FromArgb(9, 15, 70);
             btnActualizar.ForeColor = SystemColors.HighlightText;
-            btnActualizar.Location = new Point(181, 391);
+            btnActualizar.Location = new Point(181, 437);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(119, 29);
             btnActualizar.TabIndex = 11;
@@ -144,7 +147,7 @@
             // 
             btnLimpiar.BackColor = Color.FromArgb(9, 15, 70);
             btnLimpiar.ForeColor = SystemColors.HighlightText;
-            btnLimpiar.Location = new Point(331, 391);
+            btnLimpiar.Location = new Point(181, 502);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(119, 29);
             btnLimpiar.TabIndex = 12;
@@ -277,11 +280,43 @@
             btnAdministrador.Text = "ADMINISTRADOR";
             btnAdministrador.UseVisualStyleBackColor = true;
             // 
+            // cmbEstado
+            // 
+            cmbEstado.FormattingEnabled = true;
+            cmbEstado.Location = new Point(170, 369);
+            cmbEstado.Name = "cmbEstado";
+            cmbEstado.Size = new Size(232, 28);
+            cmbEstado.TabIndex = 21;
+            // 
+            // lblEstado
+            // 
+            lblEstado.AutoSize = true;
+            lblEstado.Location = new Point(100, 377);
+            lblEstado.Name = "lblEstado";
+            lblEstado.Size = new Size(57, 20);
+            lblEstado.TabIndex = 22;
+            lblEstado.Text = "Estado:";
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.FromArgb(9, 15, 70);
+            btnEliminar.ForeColor = SystemColors.HighlightText;
+            btnEliminar.Location = new Point(328, 437);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(119, 29);
+            btnEliminar.TabIndex = 23;
+            btnEliminar.Text = "ELIMINAR";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
             // SubFrmCrearUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1032, 553);
+            Controls.Add(btnEliminar);
+            Controls.Add(lblEstado);
+            Controls.Add(cmbEstado);
             Controls.Add(btnAdministrador);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
@@ -333,5 +368,8 @@
         private DataGridViewTextBoxColumn clave;
         private DataGridViewTextBoxColumn rol;
         private DataGridViewTextBoxColumn estado;
+        private ComboBox cmbEstado;
+        private Label lblEstado;
+        private Button btnEliminar;
     }
 }
