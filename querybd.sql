@@ -57,12 +57,12 @@ CREATE TABLE Evento (
     fecha_inicio DATETIME NOT NULL,
     fecha_fin DATETIME,
     lugar VARCHAR(150) DEFAULT 'Centro Cultural “TILSA TSUCHIYA CASTILLO”',
-    tipo_evento VARCHAR(50), 
+    tipo_evento VARCHAR(50),
+    imagen VARCHAR(250), -- AGREGADO AQUÍ
     id_facultad INT,
     FOREIGN KEY (id_facultad) REFERENCES Facultad(id_facultad)
         ON UPDATE CASCADE ON DELETE SET NULL
 );
-
 
 
 CREATE TABLE Asistencia (
@@ -146,11 +146,11 @@ INSERT INTO PersonaPrograma (id_persona, id_programa, ciclo) VALUES
 (5, 3, NULL); 
 
 -- Eventos
-INSERT INTO Evento (nombre, descripcion, fecha_inicio, fecha_fin, tipo_evento, id_facultad)
+INSERT INTO Evento (nombre, descripcion, fecha_inicio, fecha_fin, tipo_evento, imagen, id_facultad)
 VALUES
-('Conferencia de Innovación Digital', 'Charla sobre transformación digital en educación', '2025-11-10 09:00:00', '2025-11-10 12:00:00', 'Conferencia', 1),
-('Reunión de Coordinadores Académicos', 'Planificación del semestre 2025-II', '2025-11-15 10:00:00', '2025-11-15 12:00:00', 'Reunión', 2),
-('Foro de Emprendimiento Universitario', 'Promoción de proyectos de innovación', '2025-11-20 09:00:00', '2025-11-20 14:00:00', 'Foro', 3);
+('Conferencia de Innovación Digital', 'Charla sobre transformación digital en educación', '2025-11-10 09:00:00', '2025-11-10 12:00:00', 'Conferencia', NULL, 1),
+('Reunión de Coordinadores Académicos', 'Planificación del semestre 2025-II', '2025-11-15 10:00:00', '2025-11-15 12:00:00', 'Reunión', NULL, 2),
+('Foro de Emprendimiento Universitario', 'Promoción de proyectos de innovación', '2025-11-20 09:00:00', '2025-11-20 14:00:00', 'Foro', NULL, 3);
 
 -- Asistencia
 INSERT INTO Asistencia (id_evento, id_persona, estado) VALUES
