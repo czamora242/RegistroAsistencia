@@ -69,6 +69,7 @@ namespace pyRegistroAsistencia
 
             if (File.Exists(rutaImagen))
                 picHoy.Image = Image.FromFile(rutaImagen);
+                picHoy.SizeMode = PictureBoxSizeMode.Zoom;
 
         }
 
@@ -106,7 +107,7 @@ namespace pyRegistroAsistencia
                 pic.Width = 180;
                 pic.Height = 200;
                 pic.Location = new Point(10, 10);
-                pic.BorderStyle = BorderStyle.FixedSingle;
+                pic.SizeMode = PictureBoxSizeMode.Zoom;
 
                 string nombreArchivo = row["imagen"].ToString();
                 string rutaImagen = Path.Combine(Application.StartupPath, "imagenes", nombreArchivo);
