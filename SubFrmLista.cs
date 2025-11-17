@@ -8,7 +8,7 @@ namespace pyRegistroAsistencia
 {
     public partial class SubFrmLista : Form
     {
-        // 🔹 Conexión a tu base de datos MySQL
+        //Conexión a tu base de datos MySQL
         string conexion = "Server=localhost;Database=AsistenciaUniversitaria;Uid=root;Pwd=123456;";
 
         public SubFrmLista()
@@ -16,13 +16,13 @@ namespace pyRegistroAsistencia
             InitializeComponent();
         }
 
-        // 🔹 Evento al cargar el formulario
+        //Evento al cargar el formulario
         private void SubFrmLista_Load(object sender, EventArgs e)
         {
             CargarDatos();
         }
 
-        // 🔹 Cargar toda la lista de asistentes
+        //Cargar toda la lista de asistentes
         private void CargarDatos()
         {
             try
@@ -56,7 +56,7 @@ namespace pyRegistroAsistencia
             }
         }
 
-        // 🔹 Buscar por nombre o DNI en tiempo real
+        //Buscar por nombre o DNI en tiempo real
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             string texto = txtBuscar.Text.Trim();
@@ -103,7 +103,7 @@ namespace pyRegistroAsistencia
             }
         }
 
-        // 🔹 Botón para recargar todo
+        //Botón para recargar todo
         private void btnMostrarTodo_Click(object sender, EventArgs e)
         {
             txtBuscar.Clear();

@@ -30,9 +30,9 @@
             dgvLista = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvLista).BeginInit();
             SuspendLayout();
-            // 
+             
             // label1
-            // 
+            
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(9, 15, 70);
@@ -41,18 +41,18 @@
             label1.Size = new Size(138, 20);
             label1.TabIndex = 0;
             label1.Text = "Lista de Asistencia";
-            // 
+             
             // txtBuscar
-            // 
+             
             txtBuscar.Location = new Point(30, 50);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "Buscar por nombre o DNI...";
             txtBuscar.Size = new Size(480, 23);
             txtBuscar.TabIndex = 1;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
-            // 
+             
             // btnMostrarTodo
-            // 
+            
             btnMostrarTodo.BackColor = Color.FromArgb(9, 15, 70);
             btnMostrarTodo.FlatStyle = FlatStyle.Flat;
             btnMostrarTodo.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Bold);
@@ -64,9 +64,9 @@
             btnMostrarTodo.Text = "Mostrar Todo";
             btnMostrarTodo.UseVisualStyleBackColor = false;
             btnMostrarTodo.Click += btnMostrarTodo_Click;
-            // 
+             
             // dgvLista
-            // 
+             
             dgvLista.AllowUserToAddRows = false;
             dgvLista.AllowUserToDeleteRows = false;
             dgvLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -78,9 +78,9 @@
             dgvLista.RowHeadersVisible = false;
             dgvLista.Size = new Size(680, 260);
             dgvLista.TabIndex = 3;
-            // 
+             
             // SubFrmLista
-            // 
+
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(225, 225, 225);
