@@ -106,7 +106,7 @@
             btnEventos.ForeColor = Color.Gainsboro;
             btnEventos.Image = (Image)resources.GetObject("btnEventos.Image");
             btnEventos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEventos.Location = new Point(1, 386);
+            btnEventos.Location = new Point(3, 454);
             btnEventos.Name = "btnEventos";
             btnEventos.Size = new Size(250, 50);
             btnEventos.TabIndex = 9;
@@ -124,7 +124,7 @@
             btnAyuda.ForeColor = Color.Gainsboro;
             btnAyuda.Image = (Image)resources.GetObject("btnAyuda.Image");
             btnAyuda.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAyuda.Location = new Point(0, 315);
+            btnAyuda.Location = new Point(3, 192);
             btnAyuda.Name = "btnAyuda";
             btnAyuda.Size = new Size(250, 50);
             btnAyuda.TabIndex = 8;
@@ -142,7 +142,7 @@
             btnCrearUsuario.ForeColor = Color.Gainsboro;
             btnCrearUsuario.Image = (Image)resources.GetObject("btnCrearUsuario.Image");
             btnCrearUsuario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCrearUsuario.Location = new Point(0, 515);
+            btnCrearUsuario.Location = new Point(0, 524);
             btnCrearUsuario.Name = "btnCrearUsuario";
             btnCrearUsuario.Size = new Size(250, 50);
             btnCrearUsuario.TabIndex = 7;
@@ -160,7 +160,7 @@
             btnAjustes.ForeColor = Color.Gainsboro;
             btnAjustes.Image = (Image)resources.GetObject("btnAjustes.Image");
             btnAjustes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAjustes.Location = new Point(1, 249);
+            btnAjustes.Location = new Point(0, 384);
             btnAjustes.Name = "btnAjustes";
             btnAjustes.Size = new Size(250, 50);
             btnAjustes.TabIndex = 6;
@@ -178,7 +178,7 @@
             BtnReportes.ForeColor = Color.Gainsboro;
             BtnReportes.Image = (Image)resources.GetObject("BtnReportes.Image");
             BtnReportes.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnReportes.Location = new Point(0, 442);
+            BtnReportes.Location = new Point(3, 261);
             BtnReportes.Name = "BtnReportes";
             BtnReportes.Size = new Size(250, 50);
             BtnReportes.TabIndex = 5;
@@ -196,7 +196,7 @@
             BtnLista.ForeColor = Color.Gainsboro;
             BtnLista.Image = (Image)resources.GetObject("BtnLista.Image");
             BtnLista.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnLista.Location = new Point(0, 187);
+            BtnLista.Location = new Point(0, 123);
             BtnLista.Name = "BtnLista";
             BtnLista.Size = new Size(250, 50);
             BtnLista.TabIndex = 4;
@@ -214,7 +214,7 @@
             BtnPersonas.ForeColor = Color.Gainsboro;
             BtnPersonas.Image = (Image)resources.GetObject("BtnPersonas.Image");
             BtnPersonas.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnPersonas.Location = new Point(0, 185);
+            BtnPersonas.Location = new Point(3, 123);
             BtnPersonas.Name = "BtnPersonas";
             BtnPersonas.Size = new Size(250, 50);
             BtnPersonas.TabIndex = 3;
@@ -232,7 +232,7 @@
             BtnMarcar.ForeColor = Color.Gainsboro;
             BtnMarcar.Image = (Image)resources.GetObject("BtnMarcar.Image");
             BtnMarcar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnMarcar.Location = new Point(0, 128);
+            BtnMarcar.Location = new Point(3, 328);
             BtnMarcar.Name = "BtnMarcar";
             BtnMarcar.Size = new Size(250, 50);
             BtnMarcar.TabIndex = 2;
